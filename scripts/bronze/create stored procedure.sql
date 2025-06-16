@@ -1,7 +1,7 @@
 
 -- TRUNCATE and LOAD 
 
--- TRUNCATE : Quickly delete all rows from a table, resetting it into an empty state 
+-- TRUNCATE: Quickly delete all rows from a table, resetting it into an empty state 
 TRUNCATE TABLE bronze.crm_cust_info
 
 BULK INSERT bronze.crm_cust_info
@@ -15,9 +15,9 @@ WITH (
 /*
 ===============================================================================
 -- Check Data quality 
--- Every column Has data on it or not 
+-- Every column has data on it or not 
 -- Check that the data has not shifted and is in the correct columns
-- data completnec like if all raws are ther or not (using count() function) and check the data source the CSV file in our case
+- data completeness like if all rows are there or not (using count() function) and check the data source the CSV file in our case
 ===============================================================================
 */
 SELECT * FROM bronze.crm_cust_info
