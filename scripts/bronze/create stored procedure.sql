@@ -1,5 +1,5 @@
+EXEC bronze.load_bronze
 -- Create Stored Procedure
-
 CREATE OR ALTER PROCEDURE bronze.load_bronze As 
 BEGIN
 --Add Try ... Catch 
