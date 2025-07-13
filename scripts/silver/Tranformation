@@ -1,4 +1,4 @@
--- Transfromation silver.crm_cust_info
+-- Transformation silver.crm_cust_info
 
 INSERT INTO silver.crm_cust_info(
     cst_id,
@@ -18,19 +18,19 @@ SELECT
     -- Apply CASE WHEN to Replace values: CASE WHEN is like an IF statement in SQL.
     -- It lets you create new columns or conditions based on logic.
     -- Apply UPPER() just in case mixed-case values appear later in your column.
-    -- Apply TRIM() just in case spaces apperar later in your column.
+    -- Apply TRIM() just in case spaces appear later in your column.
     CASE 
         WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
         WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
         ELSE 'n/a'
-    END AS cst_marital_status ,
+    END AS cst_marital_status,
     CASE 
         WHEN UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
         WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
         ELSE 'n/a'
-    END AS cst_gndr ,
-    -- We make sure that this column is a real date and not as a string or VARCHAR,
-    -- As we defined it as a date at the beginng
+    END AS cst_gndr,
+    -- We make sure that this column is a real date and not a string or VARCHAR,
+    -- As we defined it as a date at the beginning
     cst_create_date 
 -- SELECT only the cst_id with flag_last 1 to remove duplicate customer IDs 
 FROM (
